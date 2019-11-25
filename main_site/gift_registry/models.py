@@ -36,7 +36,7 @@ class Gift(models.Model):
     url = models.URLField(
         blank=True, default='', help_text='A website showing the item.')
     image = models.ImageField(
-        upload_to='gift_registry/images', null=True, blank=True,
+        null=True, blank=True,
         help_text='A photo or illustration.')
     one_only = models.BooleanField(
         default=True,

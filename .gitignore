@@ -3,4 +3,4 @@
 *.mo
 __pycache__
 .idea
-main_site/gift_registry/images/
+media

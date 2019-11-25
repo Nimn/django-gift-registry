@@ -126,3 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 SITE_ID = 1
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = "main_site/media/"
