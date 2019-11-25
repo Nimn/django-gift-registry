@@ -1,0 +1,15 @@
+{% extends "gift_registry/base.html" %}
+{% load i18n %}
+
+{% block main_content %}
+{% comment %}
+<ul>
+{% for username, name in users %}
+<li>
+<a href="{% url 'gift_list' username %}">{{ name }}</a></li>
+{% empty %}
+<li>{% trans "Sorry, no gifts are available" %}</li>
+{% endfor %}
+</ul>
+{% endcomment %}
+{% endblock %}

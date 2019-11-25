@@ -35,6 +35,7 @@ setup(
     include_package_data=True,
 
     install_requires=[
-        "Django >= 1.6",
+        "Django >= 1.11, < 2.0",
+        "Pillow",
     ],
 )

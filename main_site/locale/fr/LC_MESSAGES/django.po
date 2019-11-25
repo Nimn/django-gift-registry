@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-25 12:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: gift_registry/models.py:31
+msgid "User"
+msgstr "Utilisateur"
+
+#: gift_registry/templates/gift_registry/email_thanks.txt:1
+msgid "Thanks for choosing a gift! You chose:"
+msgstr "Merci d'avoir choisi un cadeau ! Vous avez choisi :"
+
+#: gift_registry/templates/gift_registry/email_thanks.txt:12
+msgid ""
+"This is a \"one only\" type gift, so has been automatically crossed off the "
+"list."
+msgstr ""
+"Ce cadeau n'est disponible qu'en un seul exemplaire, il n'est maintenant "
+"plus disponible."
+
+#: gift_registry/templates/gift_registry/email_thanks.txt:13
+msgid ""
+"We're happy for more than one person to choose this gift, so note that it "
+"won't be crossed off the list."
+msgstr ""
+"Nous serons heureux que plus d'une personne choisisse ce cadeau, il reste "
+"donc disponible."
+
+#: gift_registry/templates/gift_registry/email_thanks.txt:15
+msgid "If you change your mind, use this link to cancel your choice:"
+msgstr "Si vous changez d'avis, utilisez ce lien pour annuler votre choix :"
+
+#: gift_registry/templates/gift_registry/gift_detail.html:6
+msgid "Back to Gifts"
+msgstr "Retour aux cadeaux"
+
+#: gift_registry/templates/gift_registry/gift_detail.html:22
+msgid "To choose this gift, enter your email address and select \"Choose\"."
+msgstr ""
+"Pour choisir ce cadeau, entrez votre courriel et sélectionnez « Choisir »."
+
+#: gift_registry/templates/gift_registry/gift_detail.html:23
+msgid "We'll send you an email to confirm your choice."
+msgstr "Nous vous avons envoyé un courriel pour confirmer vitre choix."
+
+#: gift_registry/templates/gift_registry/gift_detail.html:29
+msgid "Someone has already chosen this gift."
+msgstr "Quelqu'un a déjà choisi ce cadeau."
+
+#: gift_registry/templates/gift_registry/gift_list.html:6
+msgid "Select an item for more details."
+msgstr "Sélectionnez un élément pour plus de détail."
+
+#: gift_registry/templates/gift_registry/gift_list.html:13
+msgid "Sorry, no gifts are available"
+msgstr "Désolé, aucun cadeau n'est disponible"
+
+#: gift_registry/templates/gift_registry/thanks_cancel.html:5
+msgid "Your choice has been cancelled"
+msgstr "Votre choix a été annulé"
+
+#: gift_registry/templates/gift_registry/thanks_cancel.html:6
+msgid "We've updated the list so you're welcome to choose again if you'd like."
+msgstr ""
+"Nous avons mis à jour la liste, vous pouvez le choisir de nouveau si vous le "
+"souhaitez"
+
+#: gift_registry/templates/gift_registry/thanks_cancel.html:8
+#: gift_registry/templates/gift_registry/thanks_given.html:7
+msgid "Return to list"
+msgstr "Retour à la liste"
+
+#: gift_registry/templates/gift_registry/thanks_given.html:4
+msgid "Thanks for choosing a gift!"
+msgstr "Merci d'avoir choisi un cadeau !"
+
+#: gift_registry/templates/gift_registry/thanks_given.html:5
+msgid "We've sent you an email to confirm your choice."
+msgstr "Nous vous avons envoyé un courriel pour confimer votre choix."

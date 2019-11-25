@@ -1,1 +1,6 @@
 *.egg-info
+*.sqlite3
+*.mo
+__pycache__
+.idea
+main_site/gift_registry/images/

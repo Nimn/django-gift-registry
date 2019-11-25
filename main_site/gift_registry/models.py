@@ -2,11 +2,15 @@ from hashlib import sha1
 
 from django.conf import settings
 from django.contrib.sites.models import Site
+from django.contrib.auth.models import User
+from django.urls import reverse
 from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 from django.db import models
 from django.template.loader import render_to_string
 from django.utils.text import wrap
+from django.utils.translation import gettext_lazy as _
+
 
 # Dictionary settings inspired by:
 # PyCon 2011: Pluggable Django Patterns
@@ -22,7 +26,9 @@ for field in required_settings:
     if field not in settings.GIFT_REGISTRY_SETTINGS:
         raise ImproperlyConfigured("GIFT_REGISTRY_SETTINGS['%s'] is required in settings." % field)
 
+
 class Gift(models.Model):
+    user = models.ForeignKey(User, verbose_name=_("User"), related_name="gifts")
     title = models.CharField(max_length=100)
     desc = models.TextField(
         'description', blank=True, default='',
@@ -50,9 +56,8 @@ class Gift(models.Model):
     def __str__(self):
         return self.title
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('gift_registry.views.detail', [self.id])
+        return reverse('gift_detail', args=[self.id])
 
     def bookable(self):
         return not self.one_only or self.giver_set.count() <= 0
@@ -92,7 +97,7 @@ class Giver(models.Model):
     def save(self, *args, **kwargs):
         create = True if not self.pk else False
         email = self.email
-        self.email = sha1(self.email).hexdigest()
+        self.email = sha1(self.email.encode('utf-8')).hexdigest()
         super(Giver, self).save(*args, **kwargs)
         if create:
             self.email_confirmation(email)

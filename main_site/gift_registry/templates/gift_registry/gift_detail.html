@@ -1,7 +1,9 @@
 {% extends "gift_registry/base.html" %}
+{% load i18n %}
 
 {% block main_content %}
-<p><a href="{% url "gift_list" %}"><span style="font-size: 1.3em">⬅</span> Back to Gifts</a></p>
+<p><a href="{% url "gift_list" object.user.username %}"><span
+        style="font-size: 1.3em">⬅ </span> {% trans "Back to Gifts"%}</a></p>
 
 
 <h1>{{ object }}</h1>
@@ -13,16 +15,17 @@
 
 {% if object.url %}<p style="text-align: center"><a href="{{ object.url }}" target="_blank">{{ object.url }}</a></p>{% endif %}
 
-{% if object.bookable %}
-<form method="post" action="">
+{% if bookable %}
+<form method="post" action="{% url 'gift_detail' object.pk %}">
 {% csrf_token %}
 <fieldset>
-<p><em>To choose this gift, enter your email address and select "Choose". We'll send you an email to confirm your choice.</em>
+<p><em>{% trans 'To choose this gift, enter your email address and select "Choose".'%}
+    {% trans "We'll send you an email to confirm your choice." %}</em>
 {{ giver_form.as_p }}
 <p><button type="submit">Choose <span style="font-size: 1.3em">✔</span></button></em></p>
 </fieldset>
 </form>
 {% else %}
-<p style="text-align: center"><strong>Someone has already chosen this gift.</strong></p>
+<p style="text-align: center"><strong>{% trans 'Someone has already chosen this gift.' %}</strong></p>
 {% endif %}
 {% endblock %}
