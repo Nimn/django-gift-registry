@@ -37,6 +37,7 @@ class Gift(models.Model):
         blank=True, default='', help_text='A website showing the item.')
     image = models.ImageField(
         null=True, blank=True,
+        upload_to='images/',
         help_text='A photo or illustration.')
     one_only = models.BooleanField(
         default=True,
