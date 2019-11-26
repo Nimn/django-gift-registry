@@ -129,3 +129,8 @@ SITE_ID = 1
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "main_site/media/"
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
