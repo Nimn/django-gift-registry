@@ -5,5 +5,5 @@
 <h1>{% trans "Your choice has been cancelled"%}</h1>
 <p>{% trans "We've updated the list so you're welcome to choose again if you'd like."%}</p>
 
-<p><a href="{% url "gift_list" %}"><span style="font-size: 1.5em">⬅</span> {% trans "Return to list"%}</a></p>
+<p><a href="{% url "gift_list" username%}"><span style="font-size: 1.5em">⬅ </span> {% trans "Return to list"%}</a></p>
 {% endblock %}

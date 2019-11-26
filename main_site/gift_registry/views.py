@@ -1,10 +1,9 @@
 from django.core.exceptions import PermissionDenied
 from django.conf import settings
-from django.shortcuts import render, render_to_response, redirect, \
-    get_object_or_404
-from django.template import RequestContext
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib.auth.models import User
+from django.views.generic import TemplateView
 
 from gift_registry.forms import GiverForm
 from gift_registry.models import Gift, Giver
@@ -36,6 +35,24 @@ class GiftListView(ListView):
         return context
 
 
+class ThanksGiven(TemplateView):
+    template_name = "gift_registry/thanks_given.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ThanksGiven, self).get_context_data(**kwargs)
+        context["username"] = self.args[0]
+        return context
+
+
+class ThanksCancel(TemplateView):
+    template_name = "gift_registry/thanks_cancel.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ThanksCancel, self).get_context_data(**kwargs)
+        context["username"] = self.args[0]
+        return context
+
+
 def home(request):
     q = User.objects.filter(gifts__live=True)
     users = []
@@ -58,7 +75,7 @@ def detail(request, id):
             bookable = False
         elif giver_form.is_valid():
             giver_form.save()
-            return redirect('thanks_given')
+            return redirect('thanks_given', gift.user.username)
         return render(
             request, 'gift_registry/gift_detail.html',
             context={'object': gift,
@@ -76,6 +93,7 @@ def cancel(request, giver_id, key):
     giver = get_object_or_404(Giver, id=giver_id)
     if giver.secret_key() != key:
         raise PermissionDenied
+    gift = giver.gift
 
     giver.delete()
-    return redirect('thanks_cancel')
+    return redirect('thanks_cancel', gift.user.username)
