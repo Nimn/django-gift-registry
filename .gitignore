@@ -5,3 +5,4 @@ __pycache__
 .idea
 media
 local_settings.py
+static/*
