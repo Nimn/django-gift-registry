@@ -120,7 +120,7 @@ msgstr ""
 
 #: gift_registry/templates/gift_registry/gift_detail.html:23
 msgid "We'll send you an email to confirm your choice."
-msgstr "Nous vous avons envoyé un courriel pour confirmer vitre choix."
+msgstr "Nous vous enverons un courriel pour confirmer votre choix."
 
 #: gift_registry/templates/gift_registry/gift_detail.html:29
 msgid "Someone has already chosen this gift."
