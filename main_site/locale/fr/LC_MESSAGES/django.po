@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-25 12:20+0000\n"
+"POT-Creation-Date: 2019-11-26 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +21,70 @@ msgstr ""
 msgid "User"
 msgstr "Utilisateur"
 
+#: gift_registry/models.py:32
+msgid "Title"
+msgstr "Titre"
+
+#: gift_registry/models.py:34
+msgid "Description"
+msgstr "Description"
+
+#: gift_registry/models.py:35
+msgid "Specific details of this item, such as preferred model."
+msgstr "Détails sur cet élément, tel que modèle préféré."
+
+#: gift_registry/models.py:36
+msgid "url"
+msgstr "Adresse web"
+
+#: gift_registry/models.py:37
+msgid "A website showing the item."
+msgstr "Un site web montrant cet élément"
+
+#: gift_registry/models.py:38
+msgid "Image"
+msgstr "Image"
+
+#: gift_registry/models.py:41
+msgid "A photo or illustration."
+msgstr "Une photo ou illustration"
+
+#: gift_registry/models.py:43
+msgid "One only"
+msgstr "Seulement un"
+
+#: gift_registry/models.py:46
+msgid ""
+"When checked, remove item from list someone has chosen it. For some items, "
+"you may be happy to receive multiple."
+msgstr ""
+"Quand coché, retirer de la liste quand quelqu'un l'a choisi. Pour certains "
+"éléments, vous pourriez être content d'en recevoir plusieurs."
+
+#: gift_registry/models.py:49
+msgid "Live"
+msgstr "Actif"
+
+#: gift_registry/models.py:51
+msgid "Make this item visible to public."
+msgstr "Rendre cet élément visible."
+
+#: gift_registry/models.py:55
+msgid "Gift"
+msgstr "Cadeau"
+
+#: gift_registry/models.py:56
+msgid "Gifts"
+msgstr "Cadeaux"
+
+#: gift_registry/models.py:81
+msgid "Giver"
+msgstr "Donneur"
+
+#: gift_registry/models.py:82
+msgid "Givers"
+msgstr "Donneurs"
+
 #: gift_registry/templates/gift_registry/email_thanks.txt:1
 msgid "Thanks for choosing a gift! You chose:"
 msgstr "Merci d'avoir choisi un cadeau ! Vous avez choisi :"
@@ -32,7 +95,7 @@ msgid ""
 "list."
 msgstr ""
 "Ce cadeau n'est disponible qu'en un seul exemplaire, il n'est maintenant "
-"plus disponible."
+"plus disponible à la réservation."
 
 #: gift_registry/templates/gift_registry/email_thanks.txt:13
 msgid ""
@@ -78,8 +141,8 @@ msgstr "Votre choix a été annulé"
 #: gift_registry/templates/gift_registry/thanks_cancel.html:6
 msgid "We've updated the list so you're welcome to choose again if you'd like."
 msgstr ""
-"Nous avons mis à jour la liste, vous pouvez le choisir de nouveau si vous le "
-"souhaitez"
+"Nous avons mis à jour la liste, vous pouvez choisir un nouveau cadeau "
+"si vous le souhaitez."
 
 #: gift_registry/templates/gift_registry/thanks_cancel.html:8
 #: gift_registry/templates/gift_registry/thanks_given.html:7

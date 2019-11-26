@@ -29,27 +29,31 @@ for field in required_settings:
 
 class Gift(models.Model):
     user = models.ForeignKey(User, verbose_name=_("User"), related_name="gifts")
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, verbose_name=_("Title"))
     desc = models.TextField(
-        'description', blank=True, default='',
-        help_text='Specific details of this item, such as preferred model.')
-    url = models.URLField(
-        blank=True, default='', help_text='A website showing the item.')
-    image = models.ImageField(
+        verbose_name=_("Description"), blank=True, default='',
+        help_text=_('Specific details of this item, such as preferred model.'))
+    url = models.URLField(verbose_name=_("url"),
+        blank=True, default='', help_text=_('A website showing the item.'))
+    image = models.ImageField(verbose_name=_("Image"),
         null=True, blank=True,
         upload_to='images/',
-        help_text='A photo or illustration.')
+        help_text=_('A photo or illustration.'))
     one_only = models.BooleanField(
+        verbose_name=_("One only"),
         default=True,
-        help_text=(
+        help_text=_(
             'When checked, remove item from list someone has chosen it. For '
             'some items, you may be happy to receive multiple.'))
     live = models.BooleanField(
-        default=False,
-        help_text='Make this item visible to public.')
+        _("Live"),
+        default=True,
+        help_text=_('Make this item visible to public.'))
 
     class Meta:
         ordering = ['title']
+        verbose_name = _("Gift")
+        verbose_name_plural = _("Gifts")
 
     def __unicode__(self):
         return self.title
@@ -74,6 +78,8 @@ class Giver(models.Model):
     class Meta:
         ordering = ['id']
         unique_together = ('gift', 'email')
+        verbose_name = _("Giver")
+        verbose_name_plural = _("Givers")
 
     def __unicode__(self):
         return self.email
