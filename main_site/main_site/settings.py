@@ -128,7 +128,8 @@ STATIC_URL = '/static/'
 SITE_ID = 1
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = "main_site/media/"
+MEDIA_ROOT = os.path.join(os.getcwd(), "media")
+STATIC_ROOT = os.path.join(os.getcwd(), "static")
 
 try:
     from local_settings import *
