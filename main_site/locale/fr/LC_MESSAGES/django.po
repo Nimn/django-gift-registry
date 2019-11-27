@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-27 17:33+0000\n"
+"POT-Creation-Date: 2019-11-27 17:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,10 @@ msgstr ""
 #: gift_registry/templates/gift_registry/gift_detail.html:27
 msgid "We'll send you an email to confirm your choice."
 msgstr "Nous vous enverons un courriel récapitulatif de votre choix."
+
+#: gift_registry/templates/gift_registry/gift_detail.html:29
+msgid "Choose"
+msgstr "Choisir"
 
 #: gift_registry/templates/gift_registry/gift_detail.html:33
 msgid "Someone has already chosen this gift."
