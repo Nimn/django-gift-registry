@@ -13,7 +13,11 @@
 
 <p class="description">{{ object.desc }}</p>
 
-{% if object.url %}<p style="text-align: center"><a href="{{ object.url }}" target="_blank">{{ object.url }}</a></p>{% endif %}
+{% if object.url %}
+<p style="text-align: center">
+    <a href="{{ object.url }}" target="_blank">
+        {% trans "Open link in a new tab" %}</a>
+</p>{% endif %}
 
 {% if bookable %}
 <form method="post" action="{% url 'gift_detail' object.pk %}">
