@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-26 17:31+0000\n"
+"POT-Creation-Date: 2019-11-27 17:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,16 +113,20 @@ msgstr "Si vous changez d'avis, utilisez ce lien pour annuler votre choix :"
 msgid "Back to Gifts"
 msgstr "Retour aux cadeaux"
 
-#: gift_registry/templates/gift_registry/gift_detail.html:22
+#: gift_registry/templates/gift_registry/gift_detail.html:19
+msgid "Open link in a new tab"
+msgstr "Ouvrir le lien dans un nouvel onglet"
+
+#: gift_registry/templates/gift_registry/gift_detail.html:26
 msgid "To choose this gift, enter your email address and select \"Choose\"."
 msgstr ""
 "Pour choisir ce cadeau, entrez votre courriel et sélectionnez « Choisir »."
 
-#: gift_registry/templates/gift_registry/gift_detail.html:23
+#: gift_registry/templates/gift_registry/gift_detail.html:27
 msgid "We'll send you an email to confirm your choice."
 msgstr "Nous vous enverons un courriel récapitulatif de votre choix."
 
-#: gift_registry/templates/gift_registry/gift_detail.html:29
+#: gift_registry/templates/gift_registry/gift_detail.html:33
 msgid "Someone has already chosen this gift."
 msgstr "Quelqu'un a déjà choisi ce cadeau."
 
@@ -141,8 +145,8 @@ msgstr "Votre choix a été annulé"
 #: gift_registry/templates/gift_registry/thanks_cancel.html:6
 msgid "We've updated the list so you're welcome to choose again if you'd like."
 msgstr ""
-"Nous avons mis à jour la liste, vous pouvez choisir un nouveau cadeau "
-"si vous le souhaitez."
+"Nous avons mis à jour la liste, vous pouvez choisir un nouveau cadeau si "
+"vous le souhaitez."
 
 #: gift_registry/templates/gift_registry/thanks_cancel.html:8
 #: gift_registry/templates/gift_registry/thanks_given.html:7
