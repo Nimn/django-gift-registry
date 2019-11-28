@@ -6,19 +6,18 @@ from django.contrib.auth.models import User
 from django.views.generic import TemplateView
 
 from gift_registry.forms import GiverForm
-from gift_registry.models import Gift, Giver
+from gift_registry.models import Gift, Giver, Event
 
 
-def get_event_name(username=None):
+def get_event_name(slug=None):
     lbl = settings.GIFT_REGISTRY_SETTINGS['EVENT_NAME']
-    if not username:
+    if not slug:
         return lbl
     try:
-        user = User.objects.get(username=username)
-        user = user.first_name or user.username
-    except User.DoesNotExist:
+        event = Event.objects.get(slug=slug)
+    except Event.DoesNotExist:
         return lbl
-    return lbl + " " + user
+    return event.name
 
 
 class GiftListView(ListView):
@@ -26,7 +25,7 @@ class GiftListView(ListView):
 
     def get_queryset(self):
         queryset = Gift.objects.filter(live=True,
-                                       user__username=self.args[0])
+                                       event__slug=self.args[0])
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -40,7 +39,7 @@ class ThanksGiven(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ThanksGiven, self).get_context_data(**kwargs)
-        context["username"] = self.args[0]
+        context["event"] = self.args[0]
         return context
 
 
@@ -49,18 +48,18 @@ class ThanksCancel(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ThanksCancel, self).get_context_data(**kwargs)
-        context["username"] = self.args[0]
+        context["event"] = self.args[0]
         return context
 
 
 def home(request):
-    q = User.objects.filter(gifts__live=True)
-    users = []
-    for user in q.all():
-        users.append([user.username, user.first_name or user.username])
+    q = Event.objects.filter(gifts__live=True)
+    events = []
+    for event in q.all():
+        events.append([event.slug, event.name])
     context = {}
     context['event_name'] = get_event_name()
-    context["users"] = users
+    context["events"] = events
     return render(request, "gift_registry/home.html", context=context)
 
 
@@ -75,7 +74,7 @@ def detail(request, id):
             bookable = False
         elif giver_form.is_valid():
             giver_form.save()
-            return redirect('thanks_given', gift.user.username)
+            return redirect('thanks_given', gift.event.slug)
         return render(
             request, 'gift_registry/gift_detail.html',
             context={'object': gift,
@@ -96,4 +95,4 @@ def cancel(request, giver_id, key):
     gift = giver.gift
 
     giver.delete()
-    return redirect('thanks_cancel', gift.user.username)
+    return redirect('thanks_cancel', gift.event.slug)

@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block main_content %}
-<p><a href="{% url "gift_list" object.user.username %}"><span
+<p><a href="{% url "gift_list" object.event.slug %}"><span
         style="font-size: 1.3em">⬅ </span> {% trans "Back to Gifts"%}</a></p>
 
 

@@ -27,8 +27,24 @@ for field in required_settings:
         raise ImproperlyConfigured("GIFT_REGISTRY_SETTINGS['%s'] is required in settings." % field)
 
 
+class Event(models.Model):
+    name = models.CharField(verbose_name=_("Name"), max_length=50)
+    slug = models.SlugField(verbose_name=_("Slug"))
+    user = models.ForeignKey(User, verbose_name=_("User"),
+                             related_name="events")
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _("Event")
+        verbose_name_plural = _("Events")
+
+    def __str__(self):
+        return "{} - {}".format(self.name, self.user)
+
+
 class Gift(models.Model):
-    user = models.ForeignKey(User, verbose_name=_("User"), related_name="gifts")
+    event = models.ForeignKey(Event, verbose_name=_("Event"),
+                              related_name='gifts', blank=True, null=True)
     title = models.CharField(max_length=100, verbose_name=_("Title"))
     desc = models.TextField(
         verbose_name=_("Description"), blank=True, default='',

@@ -4,9 +4,9 @@
 {% block main_content %}
 {% comment %}
 <ul>
-{% for username, name in users %}
+{% for slug, name in events %}
 <li>
-<a href="{% url 'gift_list' username %}">{{ name }}</a></li>
+<a href="{% url 'gift_list' slug %}">{{ name }}</a></li>
 {% empty %}
 <li>{% trans "Sorry, no gifts are available" %}</li>
 {% endfor %}
