@@ -44,7 +44,7 @@ class Event(models.Model):
 
 class Gift(models.Model):
     event = models.ForeignKey(Event, verbose_name=_("Event"),
-                              related_name='gifts', blank=True, null=True)
+                              related_name='gifts')
     title = models.CharField(max_length=100, verbose_name=_("Title"))
     desc = models.TextField(
         verbose_name=_("Description"), blank=True, default='',
