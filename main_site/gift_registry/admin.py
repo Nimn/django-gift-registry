@@ -1,5 +1,9 @@
 from django.contrib import admin
-from gift_registry.models import Gift, Giver, Event
+from gift_registry.models import Gift, Giver, Event, GiftCategory
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ("name",)
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -20,3 +24,4 @@ class GiverAdmin(admin.ModelAdmin):
 admin.site.register(Event, EventAdmin)
 admin.site.register(Gift, GiftAdmin)
 admin.site.register(Giver, GiverAdmin)
+admin.site.register(GiftCategory, CategoryAdmin)

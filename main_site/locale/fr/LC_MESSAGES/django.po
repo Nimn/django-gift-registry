@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-28 08:00+0000\n"
+"POT-Creation-Date: 2019-11-28 08:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gift_registry/models.py:31
+#: gift_registry/models.py:31 gift_registry/models.py:46
 msgid "Name"
 msgstr "Nom"
 
@@ -29,7 +29,7 @@ msgstr "Identifiant textuel"
 msgid "User"
 msgstr "Utilisateur"
 
-#: gift_registry/models.py:38 gift_registry/models.py:46
+#: gift_registry/models.py:38 gift_registry/models.py:58
 msgid "Event"
 msgstr "Événement"
 
@@ -37,39 +37,47 @@ msgstr "Événement"
 msgid "Events"
 msgstr "Événements"
 
-#: gift_registry/models.py:48
+#: gift_registry/models.py:50 gift_registry/models.py:62
+msgid "Gift category"
+msgstr "Catégorie de cadeau"
+
+#: gift_registry/models.py:51
+msgid "Gift categories"
+msgstr "Catégories de cadeau"
+
+#: gift_registry/models.py:60
 msgid "Title"
 msgstr "Titre"
 
-#: gift_registry/models.py:50
+#: gift_registry/models.py:64
 msgid "Description"
 msgstr "Description"
 
-#: gift_registry/models.py:51
+#: gift_registry/models.py:65
 msgid "Specific details of this item, such as preferred model."
 msgstr "Détails sur cet élément, tel que modèle préféré."
 
-#: gift_registry/models.py:52
+#: gift_registry/models.py:66
 msgid "url"
 msgstr "Adresse web"
 
-#: gift_registry/models.py:53
+#: gift_registry/models.py:67
 msgid "A website showing the item."
 msgstr "Un site web montrant cet élément"
 
-#: gift_registry/models.py:54
+#: gift_registry/models.py:68
 msgid "Image"
 msgstr "Image"
 
-#: gift_registry/models.py:57
+#: gift_registry/models.py:71
 msgid "A photo or illustration."
 msgstr "Une photo ou illustration"
 
-#: gift_registry/models.py:59
+#: gift_registry/models.py:73
 msgid "One only"
 msgstr "Seulement un"
 
-#: gift_registry/models.py:62
+#: gift_registry/models.py:76
 msgid ""
 "When checked, remove item from list someone has chosen it. For some items, "
 "you may be happy to receive multiple."
@@ -77,27 +85,27 @@ msgstr ""
 "Quand coché, retirer de la liste quand quelqu'un l'a choisi. Pour certains "
 "éléments, vous pourriez être content d'en recevoir plusieurs."
 
-#: gift_registry/models.py:65
+#: gift_registry/models.py:79
 msgid "Live"
 msgstr "Actif"
 
-#: gift_registry/models.py:67
+#: gift_registry/models.py:81
 msgid "Make this item visible to public."
 msgstr "Rendre cet élément visible."
 
-#: gift_registry/models.py:71
+#: gift_registry/models.py:85
 msgid "Gift"
 msgstr "Cadeau"
 
-#: gift_registry/models.py:72
+#: gift_registry/models.py:86
 msgid "Gifts"
 msgstr "Cadeaux"
 
-#: gift_registry/models.py:97
+#: gift_registry/models.py:111
 msgid "Giver"
 msgstr "Donneur"
 
-#: gift_registry/models.py:98
+#: gift_registry/models.py:112
 msgid "Givers"
 msgstr "Donneurs"
 
@@ -154,7 +162,7 @@ msgstr "Quelqu'un a déjà choisi ce cadeau."
 msgid "Select an item for more details."
 msgstr "Sélectionnez un élément pour plus de détail."
 
-#: gift_registry/templates/gift_registry/gift_list.html:13
+#: gift_registry/templates/gift_registry/gift_list.html:20
 msgid "Sorry, no gifts are available"
 msgstr "Désolé, aucun cadeau n'est disponible"
 

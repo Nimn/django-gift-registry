@@ -42,10 +42,24 @@ class Event(models.Model):
         return "{} - {}".format(self.name, self.user)
 
 
+class GiftCategory(models.Model):
+    name = models.CharField(verbose_name=_("Name"), max_length=80)
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = _("Gift category")
+        verbose_name_plural = _("Gift categories")
+
+    def __str__(self):
+        return self.name
+
+
 class Gift(models.Model):
     event = models.ForeignKey(Event, verbose_name=_("Event"),
                               related_name='gifts')
     title = models.CharField(max_length=100, verbose_name=_("Title"))
+    category = models.ForeignKey(
+        GiftCategory, verbose_name=_("Gift category"), blank=True, null=True)
     desc = models.TextField(
         verbose_name=_("Description"), blank=True, default='',
         help_text=_('Specific details of this item, such as preferred model.'))
@@ -67,7 +81,7 @@ class Gift(models.Model):
         help_text=_('Make this item visible to public.'))
 
     class Meta:
-        ordering = ['title']
+        ordering = ['category', 'title']
         verbose_name = _("Gift")
         verbose_name_plural = _("Gifts")
 
