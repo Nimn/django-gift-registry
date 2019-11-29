@@ -10,14 +10,20 @@ from gift_registry.models import Gift, Giver, Event
 
 
 def get_event_name(slug=None):
-    lbl = settings.GIFT_REGISTRY_SETTINGS['EVENT_NAME']
+    event = get_event(slug)
+    if not event:
+        return settings.GIFT_REGISTRY_SETTINGS['EVENT_NAME']
+    return event.name
+
+
+def get_event(slug=None):
     if not slug:
-        return lbl
+        return
     try:
         event = Event.objects.get(slug=slug)
     except Event.DoesNotExist:
-        return lbl
-    return event.name
+        return
+    return event
 
 
 class GiftListView(ListView):
@@ -30,7 +36,10 @@ class GiftListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(GiftListView, self).get_context_data(**kwargs)
-        context['event_name'] = get_event_name(self.args[0])
+        event = get_event(self.args[0])
+        if event:
+            context['event_desc'] = event.description
+            context['event_name'] = event.name
         return context
 
 

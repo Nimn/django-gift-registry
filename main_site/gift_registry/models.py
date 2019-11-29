@@ -29,6 +29,7 @@ for field in required_settings:
 
 class Event(models.Model):
     name = models.CharField(verbose_name=_("Name"), max_length=50)
+    description = models.TextField(verbose_name=_("Description"), blank=True)
     slug = models.SlugField(verbose_name=_("Slug"))
     user = models.ForeignKey(User, verbose_name=_("User"),
                              related_name="events")
