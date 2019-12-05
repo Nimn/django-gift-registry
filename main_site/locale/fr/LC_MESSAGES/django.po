@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-28 08:48+0000\n"
+"POT-Creation-Date: 2019-12-05 11:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gift_registry/models.py:31 gift_registry/models.py:46
+#: gift_registry/models.py:31 gift_registry/models.py:47
 msgid "Name"
 msgstr "Nom"
 
-#: gift_registry/models.py:32
-msgid "Slug"
-msgstr "Identifiant textuel"
-
-#: gift_registry/models.py:33
-msgid "User"
-msgstr "Utilisateur"
-
-#: gift_registry/models.py:38 gift_registry/models.py:58
-msgid "Event"
-msgstr "Événement"
-
-#: gift_registry/models.py:39
-msgid "Events"
-msgstr "Événements"
-
-#: gift_registry/models.py:50 gift_registry/models.py:62
-msgid "Gift category"
-msgstr "Catégorie de cadeau"
-
-#: gift_registry/models.py:51
-msgid "Gift categories"
-msgstr "Catégories de cadeau"
-
-#: gift_registry/models.py:60
-msgid "Title"
-msgstr "Titre"
-
-#: gift_registry/models.py:64
+#: gift_registry/models.py:32 gift_registry/models.py:65
 msgid "Description"
 msgstr "Description"
 
-#: gift_registry/models.py:65
+#: gift_registry/models.py:33
+msgid "Slug"
+msgstr "Identifiant textuel"
+
+#: gift_registry/models.py:34
+msgid "User"
+msgstr "Utilisateur"
+
+#: gift_registry/models.py:39 gift_registry/models.py:59
+msgid "Event"
+msgstr "Événement"
+
+#: gift_registry/models.py:40
+msgid "Events"
+msgstr "Événements"
+
+#: gift_registry/models.py:51 gift_registry/models.py:63
+msgid "Gift category"
+msgstr "Catégorie de cadeau"
+
+#: gift_registry/models.py:52
+msgid "Gift categories"
+msgstr "Catégories de cadeau"
+
+#: gift_registry/models.py:61
+msgid "Title"
+msgstr "Titre"
+
+#: gift_registry/models.py:66
 msgid "Specific details of this item, such as preferred model."
 msgstr "Détails sur cet élément, tel que modèle préféré."
 
-#: gift_registry/models.py:66
+#: gift_registry/models.py:67
 msgid "url"
 msgstr "Adresse web"
 
-#: gift_registry/models.py:67
+#: gift_registry/models.py:68
 msgid "A website showing the item."
 msgstr "Un site web montrant cet élément"
 
-#: gift_registry/models.py:68
+#: gift_registry/models.py:69
 msgid "Image"
 msgstr "Image"
 
-#: gift_registry/models.py:71
+#: gift_registry/models.py:72
 msgid "A photo or illustration."
 msgstr "Une photo ou illustration"
 
-#: gift_registry/models.py:73
+#: gift_registry/models.py:74
 msgid "One only"
 msgstr "Seulement un"
 
-#: gift_registry/models.py:76
+#: gift_registry/models.py:77
 msgid ""
 "When checked, remove item from list someone has chosen it. For some items, "
 "you may be happy to receive multiple."
@@ -85,27 +85,27 @@ msgstr ""
 "Quand coché, retirer de la liste quand quelqu'un l'a choisi. Pour certains "
 "éléments, vous pourriez être content d'en recevoir plusieurs."
 
-#: gift_registry/models.py:79
+#: gift_registry/models.py:80
 msgid "Live"
 msgstr "Actif"
 
-#: gift_registry/models.py:81
+#: gift_registry/models.py:82
 msgid "Make this item visible to public."
 msgstr "Rendre cet élément visible."
 
-#: gift_registry/models.py:85
+#: gift_registry/models.py:86
 msgid "Gift"
 msgstr "Cadeau"
 
-#: gift_registry/models.py:86
+#: gift_registry/models.py:87
 msgid "Gifts"
 msgstr "Cadeaux"
 
-#: gift_registry/models.py:111
+#: gift_registry/models.py:112
 msgid "Giver"
 msgstr "Donneur"
 
-#: gift_registry/models.py:112
+#: gift_registry/models.py:113
 msgid "Givers"
 msgstr "Donneurs"
 
@@ -158,11 +158,19 @@ msgstr "Choisir"
 msgid "Someone has already chosen this gift."
 msgstr "Quelqu'un a déjà choisi ce cadeau."
 
-#: gift_registry/templates/gift_registry/gift_list.html:6
+#: gift_registry/templates/gift_registry/gift_list.html:8
 msgid "Select an item for more details."
 msgstr "Sélectionnez un élément pour plus de détail."
 
-#: gift_registry/templates/gift_registry/gift_list.html:20
+#: gift_registry/templates/gift_registry/gift_list.html:21
+msgid "detail"
+msgstr "détail"
+
+#: gift_registry/templates/gift_registry/gift_list.html:21
+msgid "link"
+msgstr "lien"
+
+#: gift_registry/templates/gift_registry/gift_list.html:24
 msgid "Sorry, no gifts are available"
 msgstr "Désolé, aucun cadeau n'est disponible"
 
